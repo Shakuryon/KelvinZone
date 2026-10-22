@@ -61,6 +61,12 @@ body {
 
     color: var(--mono-color);
     background-color: var(--ohno-color);
+
+    cursor: url("assets/cursors/Kawaii\ Happy\ Face\ Animated\ Cursor\ -\ cursor\ -\ SweezyCursors.png") 2 2, auto;
+}
+
+a, button { 
+    cursor: url("assets/cursors/Kawaii\ Happy\ Face\ Animated\ Cursor\ -\ pointer\ -\ SweezyCursors.png") 2 2, auto;
 }
 
 /* =========================================
@@ -109,6 +115,7 @@ p {
   position: sticky;
   top: 0;
   opacity: 1;
+  margin: 3rem;
   z-index: 100;
 }
 
@@ -427,6 +434,10 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    border-bottom: 5px solid var(--accent-color);
+    border-radius: 0px 0px 10% 10%;
+
 
     min-height: 700px;
     padding: 100px 8% 120px;
@@ -775,8 +786,8 @@ p {
     align-items: center;
     justify-content: center;
 
-    width: 340px;
-    height: 420px;
+    width: 600px;
+    height: auto;
 
     overflow: hidden;
 
@@ -789,6 +800,8 @@ p {
         0 0 45px rgba(70, 202, 220, 0.12);
 
     transform: rotate(2deg);
+
+    animation: float 4s ease-in-out infinite; 
 }
 
 .hero-photo-container img {
@@ -839,17 +852,280 @@ p {
     height: 35px;
 
     background-color: var(--secondary-theme-color);
+    animation: scrollFloat 2.5s ease-in-out infinite;  
 }
 
-/* Reduced Motion */
 
-@media (prefers-reduced-motion: reduce) {
-    .hero-btn,
-    .hero-photo-container img {
-        transition: none;
+
+/* =========================================
+   KELVIN'S MOMENTS — THREE IMAGE CARDS
+========================================= */
+
+.kelvin-moments-section {
+    position: relative;
+    padding: clamp(5rem, 9vw, 8rem) 8%;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            var(--secondary-dark-color) 0,
+            var(--ohno-color) 65%
+        );
+}
+
+.kelvin-moments-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Section Heading */
+
+.moments-heading {
+    max-width: 750px;
+    margin-bottom: 3.5rem;
+}
+
+.moments-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1rem;
+
+    color: var(--secondary-theme-color);
+    font-family: var(--font-tertiary);
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+}
+
+.moments-eyebrow-line {
+    display: block;
+    width: 28px;
+    height: 2px;
+    background: var(--secondary-theme-color);
+}
+
+.moments-title {
+    margin: 0 0 1rem;
+    color: var(--mono-color);
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+}
+
+.moments-title span {
+    color: var(--accent-color);
+}
+
+.moments-intro {
+    max-width: 520px;
+    margin: 0;
+    color: rgba(242, 247, 247, 0.72);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* Three-Card Layout */
+
+.kelvin-moments {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+    gap: clamp(1rem, 2.5vw, 2rem);
+}
+
+/* Individual Card */
+
+.kelvin-moment {
+    min-width: 0;
+    overflow: hidden;
+    background: var(--dark-theme-color);
+    border: 1px solid rgba(70, 202, 220, 0.25);
+    border-radius: 5px;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+
+    transform: translateY(0);
+    transition:
+        transform 280ms ease,
+        border-color 280ms ease,
+        box-shadow 280ms ease;
+}
+
+/* Slight stagger for a more editorial layout */
+
+.kelvin-moment:nth-child(2) {
+    margin-top: 1.5rem;
+}
+
+.kelvin-moment:nth-child(3) {
+    margin-top: 3rem;
+}
+
+/* Image */
+
+.kelvin-moment-image {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+    background: var(--secondary-dark-color);
+}
+
+.kelvin-moment-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 450ms ease;
+}
+
+/* Number Overlay */
+
+.moment-number {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    border: 1px solid rgba(242, 247, 247, 0.55);
+    background: rgba(7, 19, 23, 0.72);
+    color: var(--mono-color);
+
+    font-family: var(--font-tertiary);
+    font-size: 0.75rem;
+
+    backdrop-filter: blur(8px);
+}
+
+/* Caption Strip */
+
+.kelvin-moment-caption {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+
+    min-height: 56px;
+    padding: 0.9rem 1rem;
+}
+
+.moment-label {
+    color: var(--mono-color);
+    font-family: var(--font-tertiary);
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+}
+
+.moment-arrow {
+    color: var(--accent-color);
+    font-size: 1.15rem;
+    line-height: 1;
+
+    transition:
+        color 280ms ease,
+        transform 280ms ease;
+}
+
+/* Subtle Hover Motion */
+
+@media (hover: hover) and (pointer: fine) {
+    .kelvin-moment:hover {
+        transform: translateY(-5px);
+        border-color: var(--accent-color);
+        box-shadow: 0 18px 38px rgba(0, 0, 0, 0.32);
     }
 
-    .hero-btn:hover {
-        transform: none;
+    .kelvin-moment:hover .kelvin-moment-image img {
+        transform: scale(1.035);
+    }
+
+    .kelvin-moment:hover .moment-arrow {
+        color: var(--hover-color);
+        transform: translate(2px, -2px);
+    }
+}
+
+/* Keyboard Focus */
+
+.kelvin-moment:focus-within {
+    outline: 2px solid var(--hover-color);
+    outline-offset: 4px;
+}
+
+/* Responsive Layout */
+
+@media (max-width: 900px) {
+    .kelvin-moments-section {
+        padding-inline: 5%;
+    }
+
+    .kelvin-moments {
+        gap: 1rem;
+    }
+
+    .kelvin-moment:nth-child(2) {
+        margin-top: 1rem;
+    }
+
+    .kelvin-moment:nth-child(3) {
+        margin-top: 2rem;
+    }
+
+    .moment-label {
+        font-size: 0.62rem;
+        letter-spacing: 0.5px;
+    }
+}
+
+@media (max-width: 650px) {
+    .kelvin-moments {
+        grid-template-columns: 1fr;
+        max-width: 440px;
+        margin-inline: auto;
+        gap: 1.5rem;
+    }
+
+    .kelvin-moment:nth-child(2),
+    .kelvin-moment:nth-child(3) {
+        margin-top: 0;
+    }
+
+    .moments-heading {
+        margin-bottom: 2rem;
+    }
+
+    .kelvin-moment-image {
+        aspect-ratio: 4 / 4.5;
+    }
+}
+
+
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(2deg);
+    
+    }
+     50% {
+        transform: translateY(-14px) rotate(-2deg)
+     }
+}
+
+@keyframes scrollFloat {
+    0% {
+        transform: translateY(-15px);
+        opacity: 0%;
     }
 }
