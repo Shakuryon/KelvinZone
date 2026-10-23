@@ -62,7 +62,7 @@
                                 </svg>                                
                             </a>
                         </li>
-                        <li><a href="./contact/">Contact</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>
             </div>
@@ -694,6 +694,456 @@
         </div>
     </section>
 
+
+    <section id="contact" class="contact-section">
+
+        <div class="contact-container">
+
+            <!-- ==== Contact Introduction ==== -->
+
+            <div class="contact-content">
+
+                <div class="contact-heading">
+
+                    <span class="contact-topper">
+                        <span class="contact-topper-line"></span>
+                        THE NEXT SCENE STARTS HERE
+                    </span>
+
+                    <h2 class="contact-title">
+                        LET'S MAKE<br>
+                        SOMETHING <span>MATTER.</span>
+                    </h2>
+
+                </div>
+
+                <p class="contact-text">
+                    Have a project in mind, a character to cast, or a story
+                    worth telling? Whether it's an acting opportunity,
+                    a writing collaboration, or something entirely new,
+                    Kelvin would love to hear what you're working on.
+                </p>
+
+                <p class="contact-text contact-text-secondary">
+                    Send a message with a few details, and let's start
+                    the conversation.
+                </p>
+
+
+                <!-- ==== Contact Details ==== -->
+
+                <div class="contact-details">
+
+                    <div class="contact-detail">
+
+                        <div class="contact-icon" aria-hidden="true">
+                            @
+                        </div>
+
+                        <div class="contact-detail-content">
+
+                            <span class="contact-label">EMAIL</span>
+
+                            <!-- Replace with Kelvin's actual email -->
+                            <a href="mailto:shakuryonsteward@gmail.com">
+                                Get in touch
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-detail">
+
+                        <div class="contact-icon" aria-hidden="true">
+                            ↗
+                        </div>
+
+                        <div class="contact-detail-content">
+
+                            <span class="contact-label">OPEN TO</span>
+
+                            <span class="contact-detail-value">
+                                Acting · Writing · Collaborations
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ==== Cinematic Note ==== -->
+
+                <div class="contact-side-note" aria-hidden="true">
+
+                    <span class="contact-side-note-mark">KT.</span>
+
+                    <div class="contact-side-note-text">
+                        <span>BEHIND EVERY ROLE</span>
+                        <span>THERE'S A STORY.</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==== Contact Form ==== -->
+
+            <form
+                class="contact-form"
+                action="https://api.web3forms.com/submit"
+                method="POST"
+            >
+
+                <!-- Add Kelvin's own Web3Forms access key -->
+                <input
+                    type="hidden"
+                    name="access_key"
+                    value="590be129-e2c4-44fa-a1ca-4fd38505cbe6"
+                >
+
+                <input
+                    type="hidden"
+                    name="subject"
+                    value="New Portfolio Inquiry — Kelvin Thomas"
+                >
+
+                <input
+                    type="hidden"
+                    name="from_name"
+                    value="Kelvin Thomas Portfolio"
+                >
+
+                <!-- Optional: configure a custom redirect after submission -->
+                <!-- <input type="hidden" name="redirect" value="https://your-domain.com/thank-you/"> -->
+
+
+                <div class="form-header">
+
+                    <span class="form-topper">YOUR TURN</span>
+
+                    <h3 class="form-title">Start a Conversation.</h3>
+
+                    <p class="form-description">
+                        Tell Kelvin a little about what you have in mind.
+                    </p>
+
+                </div>
+
+
+                <!-- ==== Name ==== -->
+
+                <label class="contact-label-form">
+
+                    Your Name
+
+                    <input
+                        class="contact-input"
+                        type="text"
+                        name="name"
+                        placeholder="Who are we talking to?"
+                        autocomplete="name"
+                        required
+                    >
+
+                </label>
+
+
+                <!-- ==== Email ==== -->
+
+                <label class="contact-label-form">
+
+                    Email Address
+
+                    <input
+                        class="contact-input"
+                        type="email"
+                        name="email"
+                        placeholder="you@example.com"
+                        autocomplete="email"
+                        required
+                    >
+
+                </label>
+
+
+                <!-- ==== Inquiry Type ==== -->
+
+                <label class="contact-label-form">
+
+                    What Is This About?
+
+                    <select
+                        class="contact-input contact-select"
+                        name="inquiry_type"
+                        required
+                    >
+                        <option value="" disabled selected>
+                            Choose an inquiry type
+                        </option>
+                        <option value="Acting Opportunity">
+                            Acting Opportunity
+                        </option>
+                        <option value="Writing Collaboration">
+                            Writing Collaboration
+                        </option>
+                        <option value="Voiceover">
+                            Voiceover
+                        </option>
+                        <option value="General Inquiry">
+                            General Inquiry
+                        </option>
+                        <option value="Other">
+                            Something Else
+                        </option>
+                    </select>
+
+                </label>
+
+
+                <!-- ==== Organization / Production ==== -->
+
+                <label class="contact-label-form">
+
+                    Company or Production <span class="form-optional">(Optional)</span>
+
+                    <input
+                        class="contact-input"
+                        type="text"
+                        name="organization"
+                        placeholder="Studio, production, or organization"
+                        autocomplete="organization"
+                    >
+
+                </label>
+
+
+                <!-- ==== Message ==== -->
+
+                <label class="contact-label-form">
+
+                    Tell Us About It
+
+                    <textarea
+                        class="contact-input contact-textarea"
+                        name="message"
+                        placeholder="Share a few details about your project, opportunity, or idea..."
+                        rows="5"
+                        required
+                    ></textarea>
+
+                </label>
+
+
+                <!-- ==== Spam Honeypot ==== -->
+
+                <input
+                    type="checkbox"
+                    name="botcheck"
+                    class="contact-honeypot"
+                    tabindex="-1"
+                    autocomplete="off"
+                    aria-hidden="true"
+                >
+
+
+                <!-- ==== Submit ==== -->
+
+                <button class="contact-submit" type="submit">
+
+                    <span>Send Your Message</span>
+
+                    <span class="submit-arrow" aria-hidden="true">
+                        ↗
+                    </span>
+
+                </button>
+
+                <p class="form-note">
+                    Thanks for reaching out. Please include enough detail
+                    for Kelvin to understand your inquiry.
+                </p>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+
+    <footer id="footerSection" class="footer-section">
+
+        <!-- Cinematic Accent -->
+        <div class="footer-top-accent" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="footer-container">
+
+            <!-- Brand -->
+            <div class="footer-brand">
+
+                <a href="#home" class="footer-logo" aria-label="Kelvin Thomas — back to top">
+                    <img
+                        src="./assets/brandLogo.png"
+                        alt="Kelvin Thomas logo"
+                        loading="lazy"
+                    >
+                </a>
+
+                <div class="footer-brand-text">
+                    <p>
+                        Dominican actor and writer from Washington Heights,
+                        bringing authentic stories and compelling characters
+                        to the screen.
+                    </p>
+                </div>
+
+                <div class="footer-copyright">
+                    <span>© <span id="footerYear">2026</span> Kelvin Thomas</span>
+                </div>
+
+            </div>
+
+
+            <!-- Navigation -->
+            <nav class="footer-navigation" aria-label="Footer navigation">
+
+                <h2 class="footer-title">Explore</h2>
+
+                <div class="footer-links">
+                    <a href="./">Home</a>
+                    <a href="#heroSection">Reels</a>
+                    <a href="#aboutKelvin">About Kelvin</a>
+                    <a href="#contact">Contact</a>
+                </div>
+
+            </nav>
+
+
+            <!-- Legal -->
+            <div class="footer-legal">
+
+                <h2 class="footer-title">Legal</h2>
+
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                    <a href="#">Accessibility</a>
+                </div>
+
+            </div>
+
+
+            <!-- Contact & Socials -->
+            <div class="footer-contact">
+
+                <h2 class="footer-title">Let's Connect</h2>
+
+                <div class="footer-contact-info">
+                    <!-- Replace with Kelvin's confirmed contact information -->
+                    <a href="mailto:kelvin@example.com">
+                        Get in touch <span aria-hidden="true">↗</span>
+                    </a>
+
+                    <span class="footer-availability">
+                        ACTOR <span>·</span> WRITER
+                    </span>
+                </div>
+
+                <h3 class="footer-social-title">Find Kelvin Online</h3>
+
+                <div class="footer-socials">
+
+                    <!-- Replace # with Kelvin's actual profile URLs -->
+
+                    <a href="#"
+                    aria-label="Kelvin Thomas on Instagram"
+                    class="footer-social">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true">
+                            <rect x="3" y="3" width="18" height="18" rx="5"/>
+                            <circle cx="12" cy="12" r="4"/>
+                            <circle cx="17.5" cy="6.5" r=".7" fill="currentColor"/>
+                        </svg>
+                    </a>
+
+                    <a href="#"
+                    aria-label="Kelvin Thomas on TikTok"
+                    class="footer-social">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true">
+                            <path d="M14 3v11.5a4.5 4.5 0 1 1-4-4.47"/>
+                            <path d="M14 3c.5 3 2.5 5 6 5"/>
+                        </svg>
+                    </a>
+
+                    <a href="#"
+                    aria-label="Kelvin Thomas on Facebook"
+                    class="footer-social">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            aria-hidden="true">
+                            <path d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V3.9c-.8-.1-1.7-.2-2.5-.2-2.5 0-4.2 1.5-4.2 4.3V10H7.3v3h2.8v8z"/>
+                        </svg>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+
+            <div class="footer-bottom-line"></div>
+
+            <div class="footer-bottom-content">
+
+                <span class="footer-bottom-credit">
+                    INDEPENDENT SPIRIT. AUTHENTIC STORIES.
+                </span>
+
+                <span class="footer-bottom-divider" aria-hidden="true">/</span>
+
+                <span class="footer-bottom-built">
+                    Designed &amp; developed by
+                    <a href="https://shakuryon.com/" target="_blank"
+                    rel="noopener noreferrer">ShakurWebsites</a>
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
 
 
     <script src="index.js"></script>     
