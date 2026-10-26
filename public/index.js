@@ -29,7 +29,73 @@ document.addEventListener('DOMContentLoaded', () => {
     typeTitle();
 })
 
+const reviewSlides = Array.from(document.querySelectorAll(".review-slide"));
+    const reviewDots = Array.from(document.querySelectorAll(".review-dot"));
+    const reviewPrev = document.querySelector(".review-prev");
+    const reviewNext = document.querySelector(".review-next");
+    const reviewIndexDisplay = document.querySelector(".review-index");
+    let reviewIndex = 0;
 
+    function showReview(index) {
+        if (!reviewSlides.length) return;
+        reviewIndex = (index + reviewSlides.length) % reviewSlides.length;
+
+        reviewSlides.forEach((slide, i) => {
+            const active = i === reviewIndex;
+            slide.classList.toggle("is-active", active);
+            slide.setAttribute("aria-hidden", String(!active));
+        });
+
+        reviewDots.forEach((dot, i) => {
+            const active = i === reviewIndex;
+            dot.classList.toggle("is-active", active);
+            dot.setAttribute("aria-pressed", String(active));
+        });
+    }
+
+    function showReview(index) {
+        if (!reviewSlides.length) return;
+
+        reviewIndex = (index + reviewSlides.length) % reviewSlides.length;
+
+        // Update the current slide index (e.g. 01 / 03).
+        if (reviewIndexDisplay) {
+            reviewIndexDisplay.innerHTML = `
+                ${String(reviewIndex + 1).padStart(2, "0")} /
+                ${String(reviewSlides.length).padStart(2, "0")}
+            `;
+        }
+
+        reviewSlides.forEach((slide, i) => {
+            const active = i === reviewIndex;
+            slide.classList.toggle("is-active", active);
+            slide.setAttribute("aria-hidden", String(!active));
+        });
+
+        reviewDots.forEach((dot, i) => {
+            const active = i === reviewIndex;
+            dot.classList.toggle("is-active", active);
+            dot.setAttribute("aria-pressed", String(active));
+        });
+    }
+
+    reviewPrev?.addEventListener("click", () => showReview(reviewIndex - 1));
+    reviewNext?.addEventListener("click", () => showReview(reviewIndex + 1));
+    reviewDots.forEach((dot, i) => dot.addEventListener("click", () => showReview(i)));
+    showReview(0);
+
+    // Keep the footer year current.
+    const currentYear = document.getElementById("currentYear");
+    if (currentYear) currentYear.textContent = new Date().getFullYear();
+
+    // The policy anchors are placeholders, not legal policy documents.
+    document.querySelectorAll("[data-policy-link]").forEach((link) => {
+        link.addEventListener("click", (event) => {
+            event.preventDefault();
+            const policyName = link.dataset.policyLink === "terms" ? "Terms & Conditions" : "Privacy Policy";
+            alert(`${policyName} is a placeholder in this website demo. We'll add the actual policy if published!`);
+        });
+    });
 /* =========================================
    HERO VOICE REEL PLAYERS
 ========================================= */

@@ -930,7 +930,7 @@ body {
     .footer-bottom-divider {
         display: none;
     }
-}
+
 
 
 /* =========================================================
@@ -1132,4 +1132,150 @@ body {
     .hero-scroll-line {
         animation: none;
     }
+}
+
+
+/* ================================
+   REVIEWS RESPONSIVENESS
+================================ */
+
+@media (max-width: 900px) {
+
+    .reviews-container {
+        gap: 40px;
+    }
+
+    .reviews-heading {
+        flex-basis: 280px;
+    }
+
+    .reviews-heading h2 {
+        font-size: clamp(3.2rem, 6vw, 4.5rem);
+    }
+
+    .review-feature {
+        flex-basis: 420px;
+        padding: 26px;
+    }
+
+}
+
+
+@media (max-width: 760px) {
+
+    .reviews-section {
+        padding: 80px 24px;
+    }
+
+    .reviews-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 38px;
+    }
+
+    .reviews-heading {
+        flex: 1 1 auto;
+        max-width: 600px;
+    }
+
+    .reviews-heading h2 {
+        font-size: clamp(3.5rem, 10vw, 4.8rem);
+    }
+
+    .reviews-heading > p:not(.reviews-eyebrow) {
+        max-width: 520px;
+        font-size: 0.92rem;
+    }
+
+    .review-feature {
+        flex: 1 1 auto;
+        width: 100%;
+        max-width: 650px;
+        padding: 26px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .reviews-section {
+        padding: 65px 18px;
+    }
+
+    .reviews-container {
+        gap: 30px;
+    }
+
+    .reviews-eyebrow {
+        gap: 9px;
+        font-size: 0.61rem;
+    }
+
+    .reviews-heading h2 {
+        font-size: clamp(3rem, 12vw, 3.8rem);
+    }
+
+    .reviews-heading > p:not(.reviews-eyebrow) {
+        margin-top: 20px;
+        font-size: 0.88rem;
+    }
+
+    .reviews-heading-note {
+        margin-top: 22px;
+        font-size: 0.56rem;
+    }
+
+    .review-feature {
+        padding: 22px 18px;
+    }
+
+    .review-feature::before {
+        left: 18px;
+    }
+
+    .review-topline {
+        flex-wrap: wrap;
+        gap: 9px;
+        padding-bottom: 17px;
+    }
+
+    .review-source-mark {
+        width: 30px;
+        height: 30px;
+    }
+
+    .review-source-label {
+        font-size: 0.59rem;
+    }
+
+    .review-index {
+        margin-left: auto;
+        font-size: 0.59rem;
+    }
+
+    .review-slide {
+        padding: 25px 0 22px;
+    }
+
+    .review-quote {
+        margin: 8px 0 24px;
+        font-size: 0.91rem;
+        line-height: 1.8;
+    }
+
+    .review-author-info strong {
+        font-size: 1rem;
+    }
+
+    .review-controls {
+        gap: 12px;
+    }
+
+    .review-prev,
+    .review-next {
+        width: 36px;
+        height: 36px;
+    }
+
 }
